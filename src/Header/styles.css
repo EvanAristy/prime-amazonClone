@@ -45,6 +45,17 @@
     font-weight: 800;
 }
 
+.header__optionBasket {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.header__basketCount {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .header__nav {
     display: flex;
     justify-content: space-evenly;
