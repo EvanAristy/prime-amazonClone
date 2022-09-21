@@ -3,9 +3,9 @@ import {  Route, Routes } from 'react-router-dom';
 // Css
 import './App.css';
 // Components
-import Header from './Header';
-import Home from './Home';
-import Checkout from './Checkout';
+import Header from './Components/Header';
+import Home from './Pages/Home';
+import Checkout from './Pages/Checkout';
 
 function App() {
   return (
