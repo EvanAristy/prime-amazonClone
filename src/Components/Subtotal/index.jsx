@@ -1,10 +1,24 @@
 import { SportsBasketball } from "@mui/icons-material";
 import React from "react";
 import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "../../StateProvider";
 // Css
 import "./styles.css";
 
 const Subtotal = () => {
+
+  const [{ basket }, dispatch] = useStateValue();
+
+  const subTotal = () => {
+    let total = 0;
+
+    for (let i = 0; i < basket.length; i++){
+      total += basket[i].price
+    }
+    return total;
+  }
+
+
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -12,8 +26,10 @@ const Subtotal = () => {
           <>
             <p>
                 {/* hw */}
-              Subtotal (0 items):
-              <strong>0</strong>
+              Subtotal ({basket.length} items):
+              <strong>
+                ${subTotal()}
+              </strong>
             </p>
             <small className="subtotal__gift">
               <input type="checkbox" /> This order contains a gift
