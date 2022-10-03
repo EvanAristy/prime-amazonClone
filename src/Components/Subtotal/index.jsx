@@ -9,7 +9,7 @@ const Subtotal = () => {
 
   const [{ basket }, dispatch] = useStateValue();
 
-  const subTotal = () => {
+  const getTotal = () => {
     let total = 0;
 
     for (let i = 0; i < basket.length; i++){
@@ -28,7 +28,7 @@ const Subtotal = () => {
                 {/* hw */}
               Subtotal ({basket.length} items):
               <strong>
-                ${subTotal()}
+                ${getTotal()}
               </strong>
             </p>
             <small className="subtotal__gift">
