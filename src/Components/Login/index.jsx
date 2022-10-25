@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // Css
 import "./styles.css";
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = e => {
+        e.preventDefault()
+
+        // Firebase login stuff
+    }
+
+    const register = e => {
+        e.preventDefault()
+
+        // Firebase register stuff
+    }
+
   return (
     <div className="login">
       <Link to="/">
@@ -19,12 +34,12 @@ const Login = () => {
 
         <form action="">
           <h5>E-mail</h5>
-          <input type="text" />
+          <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
 
           <h5>Password</h5>
-          <input type="password" />
+          <input type="password" value={password} onChange= {e => setPassword(e.target.value)} />
 
-          <button className="login__signInButton">Sign In</button>
+          <button type="submit" onClick={signIn} className="login__signInButton">Sign In</button>
         </form>
 
         <p>
@@ -33,7 +48,7 @@ const Login = () => {
           Notice.
         </p>
 
-        <button className="login__registerButton">Create yout Amazon Account</button>
+        <button onClick={register} className="login__registerButton">Create yout Amazon Account</button>
       </div>
     </div>
   );
