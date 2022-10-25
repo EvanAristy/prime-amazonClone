@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../../firebase";
 // Css
 import "./styles.css";
 
 const Login = () => {
+    // const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -17,6 +19,10 @@ const Login = () => {
         e.preventDefault()
 
         // Firebase register stuff
+        auth.createUserWithEmailAndPassword(email, password).then((auth) => {
+          console.log(auth)
+        })
+        .catch(error => alert(error.message))
     }
 
   return (
