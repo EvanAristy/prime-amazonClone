@@ -9,7 +9,7 @@ import { useStateValue } from "../../StateProvider";
 
 
 const Checkout = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout">
@@ -21,6 +21,7 @@ const Checkout = () => {
         />
 
         <div>
+          <h3>Hello {user ? user?.email : "Guest"}</h3>
           <h2 className="checkout__title">Your Shopping Basket</h2>
 
           {
