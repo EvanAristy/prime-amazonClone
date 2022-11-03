@@ -10,6 +10,12 @@
     min-width: 100px;
     background-color: white;
     z-index: 1;
+    transition: background-color 2s ease-out 100ms
+}
+
+.product:hover{
+    background-color: rgb(231, 228, 228);
+    border:1px solid #f0c14b;
 }
 
 .product__rating {
@@ -29,6 +35,11 @@
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    transition: all 0.3s ease-in-out;
+}
+
+.product > button:hover{
+    transform: scale(1.1);
 }
 
 .product__price {
