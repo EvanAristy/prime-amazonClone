@@ -2,11 +2,13 @@ import { SportsBasketball } from "@mui/icons-material";
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../../StateProvider";
+import { Link, useNavigate } from "react-router-dom"
 // Css
 import "./styles.css";
 
 const Subtotal = () => {
-
+  // ** gives us the browser history **
+  const navigate = useNavigate();
   const [{ basket }, dispatch] = useStateValue();
 
   const getTotal = () => {
@@ -44,7 +46,10 @@ const Subtotal = () => {
         prefix={"$"}
       />
 
-      <button>Proceed to Checkout</button>
+      {/* <Link to="/payment"> */}
+        <button onClick={e => navigate('/payment')}>Proceed to Checkout</button>
+      {/* </Link> */}
+      
     </div>
   );
 };

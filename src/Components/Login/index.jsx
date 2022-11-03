@@ -5,7 +5,7 @@ import { auth } from "../../firebase";
 import "./styles.css";
 
 const Login = () => {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,7 +14,7 @@ const Login = () => {
 
         // Firebase login stuff
         auth.signInWithEmailAndPassword(email, password).then(auth => {
-          history('/')
+          navigate('/')
         })
         .catch(error => alert(error.message))
     }
@@ -26,7 +26,7 @@ const Login = () => {
         auth.createUserWithEmailAndPassword(email, password).then((auth) => {
           console.log(auth)
           if (auth) {
-            history('/')
+            navigate('/')
           }
         })
         .catch(error => alert(error.message))
